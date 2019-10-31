@@ -13,13 +13,21 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
 	state: {
-		
+		isLeftNavVisible: true,
+		leftNavWidth: 30,
+		isRightNavVisible: true,
+		rightNavWidth: 300
 	},
 	actions: {
 		
 	},
 	mutations: {
-		
+		toggleLeftNav: function(state) {
+			state.isLeftNavVisible = !state.isLeftNavVisible;
+		},
+		toggleRightNav: function(state) {
+			state.isRightNavVisible = !state.isRightNavVisible;
+		}
 	}
 });
 

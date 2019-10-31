@@ -1,5 +1,5 @@
 body {
-	background: black;
+	
 	color: #999;
 	padding-top: 50px;
 }
@@ -11,4 +11,68 @@ select {
 }
 .clear {
 	clear: both;
+}
+.top-nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 40px;
+	background: #111;
+}
+.left-nav {
+	position: fixed;
+	top: 40px;
+	bottom: 40px;
+	left: 0;
+	width: 300px;
+	background: #222;
+	transition: all .25s ease-out;
+}
+.right-nav {
+	position: fixed;
+	top: 40px;
+	bottom: 40px;
+	right: 0;
+	width: 300px;
+	background: #222;
+	transition: all .25s ease-out;
+}
+.footer-nav {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 40px;
+	background: #111;
+}
+.main-stage {
+	position: fixed;
+	top: 240px;
+	bottom: 40px;
+	left: 300px;
+	right: 300px;
+	background: #333;
+	overflow: scroll;
+	transition: all .25s ease-out;
+}
+.main-stage .stage {
+	background: white;
+	border: 1px solid black;
+	width: 600px;
+	height: 400px;
+	display: inline-block;
+	margin-top: 2em;
+}
+.timeline {
+	position: fixed;
+	top: 40px;
+	height: 200px;
+	left: 300px;
+	right: 300px;
+	overflow: scroll;
+	background: url(../images/timeline-grid.svg);
+	background-repeat: repeat;
+  	background-size: 10px 1px;
+	transition: all .25s ease-out;
 }
