@@ -1,0 +1,29 @@
+{
+  "name": "luster",
+  "version": "1.0.0",
+  "description": "Web Animation IDE",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scanton/luster.git"
+  },
+  "keywords": [
+    "triangle",
+    "pixel",
+    "mosaic"
+  ],
+  "author": "Satori Canton",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/scanton/luster/issues"
+  },
+  "homepage": "https://github.com/scanton/luster#readme",
+  "dependencies": {
+    "electron-prebuilt": "^1.4.13",
+    "fs-extra": "^5.0.0"
+  }
+}

@@ -1,0 +1,14 @@
+body {
+	background: black;
+	color: #999;
+	padding-top: 50px;
+}
+select {
+	font-size: 12pt;
+}
+#main-app {
+	position: relative;
+}
+.clear {
+	clear: both;
+}
