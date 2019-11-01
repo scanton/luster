@@ -16,7 +16,14 @@ const store = new Vuex.Store({
 		isLeftNavVisible: true,
 		leftNavWidth: 30,
 		isRightNavVisible: true,
-		rightNavWidth: 300
+		rightNavWidth: 300,
+		layers: [
+			{label: 'Layer 1', color: '#00FF00', frames: []}, 
+			{label: 'Layer 2', color: '#FF0000', frames: []}, 
+			{label: 'Layer 3', color: '#0000FF', frames: []}, 
+			{label: 'Layer 4', color: '#FFFF00', frames: []}, 
+			{label: 'Layer 5', color: '#FF00FF', frames: []}
+		]
 	},
 	actions: {
 		

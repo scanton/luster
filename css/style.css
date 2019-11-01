@@ -71,8 +71,35 @@ select {
 	left: 300px;
 	right: 300px;
 	overflow: scroll;
-	background: url(../images/timeline-grid.svg);
+	/* background: url(../images/timeline-grid.svg); */
 	background-repeat: repeat;
   	background-size: 10px 1px;
 	transition: all .25s ease-out;
+}
+.timeline-layer {
+	border: 1px solid #444;
+}
+.timeline-layer .layer-details {
+	background: #777;
+	color: #EEE;
+	width: 200px;
+	margin: 0;
+	display: inline-block;
+}
+.timeline-layer .layer-color {
+	display: inline-block;
+	border: 1px solid black;
+	width: 15px;
+	height: 15px;
+	margin-top: 3px;
+	margin-right: 5px;
+	float: right;
+}
+.timeline-layer .keyframes {
+	width: 100%;
+	background: url(../images/timeline-grid.svg);
+	background-repeat: repeat;
+  	background-size: 50px 1px;
+	display: inline-block;
+	height: 20px;
 }
