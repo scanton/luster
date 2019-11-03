@@ -2,8 +2,10 @@
 	var componentName = 'main-stage';
 	var s = `
 		<div class="` + componentName + ` text-center" :style="navStyle">
-			<div class="stage">
+			<div class="contents">
+				<div class="stage" :style="stageStyle">
 
+				</div>
 			</div>
 		</div>
 	`;
@@ -15,6 +17,9 @@
 		computed: {
 			navStyle: function() {
 				return (store.state.isLeftNavVisible ? 'left: ' + store.state.leftNavWidth + 'px; ' : 'left: 0; ') + (store.state.isRightNavVisible ? 'right: ' + store.state.rightNavWidth + 'px; ' : 'right: 0; ');
+			},
+			stageStyle: function() {
+				return "width: " + store.state.stageWidth + "px; height: " + store.state.stageHeight + "px;";
 			}
 		},
 		props: [],

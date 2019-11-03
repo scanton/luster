@@ -23,12 +23,23 @@ const store = new Vuex.Store({
 			{label: 'Layer 3', color: '#0000FF', frames: []}, 
 			{label: 'Layer 4', color: '#FFFF00', frames: []}, 
 			{label: 'Layer 5', color: '#FF00FF', frames: []}
-		]
+		],	
+		stageWidth: 600,
+		stageHeight: 400
 	},
 	actions: {
 		
 	},
 	mutations: {
+		setLayerColor: function(state, {index, color}) {
+			Vue.set(state.layers[index], 'color', color);
+		},
+		setStageHeight: function(state, val) {
+			state.stageHeight = val;
+		},
+		setStageWidth: function(state, val) {
+			state.stageWidth = val;
+		},
 		toggleLeftNav: function(state) {
 			state.isLeftNavVisible = !state.isLeftNavVisible;
 		},

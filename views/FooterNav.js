@@ -1,7 +1,7 @@
 (function() {
 	var componentName = 'footer-nav';
 	var s = `
-		<div class="` + componentName + `">
+		<div class="` + componentName + ` nav-container">
 			
 		</div>
 	`;

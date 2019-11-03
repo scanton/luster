@@ -1,8 +1,10 @@
 (function() {
 	var componentName = 'right-nav';
 	var s = `
-		<div class="` + componentName + `">
-			
+		<div class="` + componentName + ` nav-container" :style="navStyle">
+			<alignment></alignment>
+			<layers></layers>
+			<sprites></sprites>
 		</div>
 	`;
 	
@@ -11,7 +13,9 @@
 			
 		},
 		computed: {
-			
+			navStyle: function() {
+				return (store.state.isRightNavVisible ? 'right: 0; ' : 'right: -' + store.state.rightNavWidth + 'px; ');
+			}
 		},
 		props: [],
 		template: s,

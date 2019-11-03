@@ -19,6 +19,7 @@ select {
 	right: 0;
 	height: 40px;
 	background: #111;
+	padding-top: 7px;
 }
 .left-nav {
 	position: fixed;
@@ -37,6 +38,7 @@ select {
 	width: 300px;
 	background: #222;
 	transition: all .25s ease-out;
+	overflow: scroll;
 }
 .footer-nav {
 	position: fixed;
@@ -46,21 +48,33 @@ select {
 	height: 40px;
 	background: #111;
 }
+.context-controls {
+	position: fixed;
+	right: 300px;
+	bottom: 40px;
+	height: 40px;
+	left: 30px;
+	background: #222;
+	padding: 3px;
+}
 .main-stage {
 	position: fixed;
 	top: 240px;
-	bottom: 40px;
+	bottom: 80px;
 	left: 300px;
 	right: 300px;
 	background: #333;
 	overflow: scroll;
 	transition: all .25s ease-out;
 }
+.main-stage .contents {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
 .main-stage .stage {
 	background: white;
 	border: 1px solid black;
-	width: 600px;
-	height: 400px;
 	display: inline-block;
 	margin-top: 2em;
 }
@@ -71,35 +85,86 @@ select {
 	left: 300px;
 	right: 300px;
 	overflow: scroll;
-	/* background: url(../images/timeline-grid.svg); */
+	background: #444;
 	background-repeat: repeat;
   	background-size: 10px 1px;
 	transition: all .25s ease-out;
 }
 .timeline-layer {
-	border: 1px solid #444;
+	border: 1px solid #888;
+	position: relative;
+	height: 25px;
+	border-bottom: none;
 }
 .timeline-layer .layer-details {
 	background: #777;
 	color: #EEE;
 	width: 200px;
+	height: 100%;
 	margin: 0;
 	display: inline-block;
+	position: absolute;
+	padding: 2px 4px;
 }
 .timeline-layer .layer-color {
 	display: inline-block;
-	border: 1px solid black;
+	border: 1px solid rgba(0, 0, 0, .5);
 	width: 15px;
 	height: 15px;
-	margin-top: 3px;
-	margin-right: 5px;
-	float: right;
+	margin-top: 2px;
+    position: absolute;
+	right: 5px;
+	pointer-events: none;
+    border-radius: 50%;
 }
 .timeline-layer .keyframes {
 	width: 100%;
+	height: 100%;
 	background: url(../images/timeline-grid.svg);
 	background-repeat: repeat;
   	background-size: 50px 1px;
 	display: inline-block;
-	height: 20px;
+	position: absolute;
+	left: 200px;
+}
+.timeline-layer .color-selector {
+	width: 22px;
+	float: right;
+	opacity: 0;
+}
+.navbar-panel .title {
+	background: #444;
+	cursor: pointer;
+	padding: 3px 10px;
+}
+.navbar-panel .title:active, .navbar-panel .title:hover {
+	color: #EEE;
+	background: #333;
+}
+.navbar-panel .controls {
+	min-height: 200px;
+	width: 112%;
+	background: #333;
+	overflow: scroll;
+}
+.navbar-panel .glyphicon-play {
+	transition: all .25s ease-out;
+}
+.navbar-panel.is-open .glyphicon-play {
+	transform: rotate(90deg);
+}
+.nav-container button.btn {
+	margin: -2px;
+    border-radius: 0;
+    padding: 5px;
+    height: 30px;
+	width: 30px;
+	color: #DDD;
+	background: #555;
+	border-color: #444;
+}
+.nav-container button.btn:active {
+	color: #EEE;
+	background: #444;
+	border-color: #222;
 }

@@ -1,8 +1,10 @@
 (function() {
 	var componentName = 'left-nav';
 	var s = `
-		<div class="` + componentName + `" :style="navStyle">
-			
+		<div class="` + componentName + ` nav-container" :style="navStyle">
+			<button class="btn btn-default">
+				<span class="glyphicon glyphicon-pencil"></span>
+			</button>
 		</div>
 	`;
 	
