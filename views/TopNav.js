@@ -4,11 +4,11 @@
 		<div class="` + componentName + ` nav-container container-fluid">
 			<div class="row">
 				<div class="col-xs-12 text-center">
-					<!--
-					<button @click="handleRightToggle" class="btn btn-default pull-right">Right Toggle</button>
-					<button @click="handleLeftToggle" class="btn btn-default">Left Toggle</button>
-					-->
 					<div class="pull-left">
+						<!--
+						<button @click="handleRightToggle" class="btn btn-default pull-right">Right Toggle</button>
+						<button @click="handleLeftToggle" class="btn btn-default">Left Toggle</button>
+						-->
 						<button class="btn btn-default" title="Open...">
 							<span class="glyphicon glyphicon-folder-open"></span>
 						</button>

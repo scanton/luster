@@ -13,8 +13,8 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
 	state: {
-		isLeftNavVisible: true,
-		leftNavWidth: 30,
+		isLeftNavVisible: false,
+		leftNavWidth: 300,
 		isRightNavVisible: true,
 		rightNavWidth: 300,
 		layers: [
@@ -25,7 +25,8 @@ const store = new Vuex.Store({
 			{label: 'Layer 5', color: '#FF00FF', frames: []}
 		],	
 		stageWidth: 600,
-		stageHeight: 400
+		stageHeight: 400,
+		stageColor: '#FFFFFF'
 	},
 	actions: {
 		
@@ -33,6 +34,9 @@ const store = new Vuex.Store({
 	mutations: {
 		setLayerColor: function(state, {index, color}) {
 			Vue.set(state.layers[index], 'color', color);
+		},
+		setStageColor: function(state, color) {
+			state.stageColor = color;
 		},
 		setStageHeight: function(state, val) {
 			state.stageHeight = val;

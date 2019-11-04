@@ -3,6 +3,11 @@ body {
 	color: #999;
 	padding-top: 50px;
 }
+input {
+	background: #444;
+	color: white;
+	border: 1px solid black;
+}
 select {
 	font-size: 12pt;
 }
@@ -21,14 +26,23 @@ select {
 	background: #111;
 	padding-top: 7px;
 }
+.tool-palette {
+	position: fixed;
+	top: 40px;
+	bottom: 40px;
+	width: 30px;
+	left: 0;
+	background: #222;
+}
 .left-nav {
 	position: fixed;
 	top: 40px;
 	bottom: 40px;
-	left: 0;
+	left: 40px;
 	width: 300px;
 	background: #222;
 	transition: all .25s ease-out;
+	overflow: scroll;
 }
 .right-nav {
 	position: fixed;
@@ -53,13 +67,14 @@ select {
 	right: 300px;
 	bottom: 40px;
 	height: 40px;
-	left: 30px;
+	left: 330px;
 	background: #222;
 	padding: 3px;
+	transition: all .25s ease-out;
 }
 .main-stage {
 	position: fixed;
-	top: 240px;
+	top: 270px;
 	bottom: 80px;
 	left: 300px;
 	right: 300px;
@@ -77,6 +92,13 @@ select {
 	border: 1px solid black;
 	display: inline-block;
 	margin-top: 2em;
+}
+.timeline-controls {
+	position: fixed;
+	top: 240px;
+	height: 30px;
+	background: #222;
+	transition: all .25s ease-out;
 }
 .timeline {
 	position: fixed;
@@ -167,4 +189,7 @@ select {
 	color: #EEE;
 	background: #444;
 	border-color: #222;
+}
+.actions-layer {
+	background: #DDD;
 }
