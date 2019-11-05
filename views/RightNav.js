@@ -2,9 +2,11 @@
 	var componentName = 'right-nav';
 	var s = `
 		<div class="` + componentName + ` nav-container" :style="navStyle">
-			<alignment></alignment>
-			<layers></layers>
+			<!--<layers></layers>-->
 			<sprites></sprites>
+			<fonts></fonts>
+			<alignment></alignment>
+			<properties></properties>
 		</div>
 	`;
 	

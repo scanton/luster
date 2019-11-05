@@ -26,14 +26,26 @@ const store = new Vuex.Store({
 		],	
 		stageWidth: 600,
 		stageHeight: 400,
-		stageColor: '#FFFFFF'
+		stageColor: '#FFFFFF',
+		selectedLayer: 0,
+		fillColor: '#0066CC',
+		strokeColor: null
 	},
 	actions: {
 		
 	},
 	mutations: {
+		selectLayer: function(state, index) {
+			state.selectedLayer = index;
+		},
+		setFillColor: function(state, val) {
+			state.fillColor = val;
+		},
 		setLayerColor: function(state, {index, color}) {
 			Vue.set(state.layers[index], 'color', color);
+		},
+		setLayerLabel: function(state, {index, label}) {
+			Vue.set(state.layers[index], 'label', label);
 		},
 		setStageColor: function(state, color) {
 			state.stageColor = color;
@@ -43,6 +55,9 @@ const store = new Vuex.Store({
 		},
 		setStageWidth: function(state, val) {
 			state.stageWidth = val;
+		},
+		setStrokeColor: function(state, val) {
+			state.strokeColor = val;
 		},
 		toggleLeftNav: function(state) {
 			state.isLeftNavVisible = !state.isLeftNavVisible;

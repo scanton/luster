@@ -2,7 +2,8 @@
 	var componentName = 'scrubber';
 	var s = `
         <div class="` + componentName + `">
-            scrubber
+            &nbsp;
+            <div class="handle"></div>
 		</div>
 	`;
 	

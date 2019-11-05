@@ -5,7 +5,7 @@
             <div class="text-center">
                 width: <input v-model="width" type="number" min="50" style="max-width: 60px" />
                 height: <input v-model="height" type="number" min="50" style="max-width: 60px" />
-                background: <input v-model="stageColor" type="color" />
+                background: <input v-model="stageColor" type="color" style="width: 23px;" />
             </div>
 		</div>
 	`;

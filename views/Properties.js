@@ -1,20 +1,12 @@
 (function() {
-	var componentName = 'sprites';
+	var componentName = 'properties';
 	var s = `
 		<div :class="{'is-open': isOpen}" class="` + componentName + ` container-fluid navbar-panel">
             <div @click="handleToggleOpen" class="row title">
-                Assets <span class="glyphicon glyphicon-play"></span>
+                Properties <span class="glyphicon glyphicon-play"></span>
             </div>
             <div v-show="isOpen" class="row controls">
 
-            </div>
-            <div v-show="isOpen" class="row toolbar">
-                <button class="btn btn-default">
-                    <span class="glyphicon glyphicon-plus"></span>
-                </button>
-                <button class="btn btn-default pull-right">
-                    <span class="glyphicon glyphicon-trash"></span>
-                </button>
             </div>
 		</div>
 	`;
