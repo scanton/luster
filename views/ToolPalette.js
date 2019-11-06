@@ -24,6 +24,9 @@
 				<span class="glyphicon glyphicon-pencil"></span>
 			</button>
 			<button class="btn btn-default">
+				<img src="images/icon-pen.svg" />
+			</button>
+			<button class="btn btn-default">
 				<span class="glyphicon glyphicon-line"></span>
 			</button>
 			<button class="btn btn-default">
