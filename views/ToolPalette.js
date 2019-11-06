@@ -62,7 +62,7 @@
 			</div>
 			<input type="color" v-model="fillColor" style="width: 30px; height: 30px;" />
 
-			<button class="btn btn-default">
+			<button class="btn btn-default" style="margin-top: 5px" title="Toggle Object Snapping">
 				<span class="glyphicon glyphicon-magnet" style="transform: rotate(180deg)"></span>
 			</button>
 		</div>
