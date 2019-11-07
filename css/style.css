@@ -173,7 +173,11 @@ select {
 	background: #DDD;
 	position: relative;
 }
-.actions-layer .layer-details {
+.actions-layer .keyframes {
+	border: 1px solid #999;
+	border-bottom: none;
+}
+.actions-layer .layer-details, .scrubber .layer-details {
 	background: #BBB;
 	color: #222;
 	width: 200px;
@@ -182,7 +186,10 @@ select {
 	display: inline-block;
 	padding: 2px 4px;
 }
-.actions-layer .keyframes {
+.scrubber .layer-details {
+	background: #444;
+}
+.actions-layer .keyframes, .scrubber .keyframes {
 	width: 100%;
 	height: 100%;
 	background: url(../images/actions-grid.svg);
@@ -191,6 +198,9 @@ select {
 	display: inline-block;
 	position: absolute;
 	left: 200px;
+}
+.scrubber .keyframes {
+	background: none;
 }
 .navbar-panel {
 	border: 1px solid #555;
@@ -239,13 +249,15 @@ select {
 	position: relative;
 }
 .scrubber .handle {
-	height: 30px;
+	height: 25px;
 	width: 10px;
-	border: 1px solid red;
-	background: rgba(255, 0, 0, .33);
+	border: 1px solid yellow;
+	background: rgba(255, 255, 0, .33);
 	position: absolute;
 	left: 200px;
 	top: 0;
+	cursor: pointer;
+	pointer-events: none;
 }
 .glyphicon-rectangle {
 	display: inline-block;
@@ -282,4 +294,20 @@ select {
 	border-bottom: 3px solid red;
 	width: 28px;
 	transform: translateX(-4px) translateY(-3.5px) rotate(-45deg);
+}
+.frame-indicator {
+	width: 2px;
+	height: 30px;
+	background: yellow;
+	position: absolute;
+	top: 0;
+	left: 4px;
+}
+.nav-container button.play-button.playing {
+	background: #333;
+	color: white;
+}
+.nav-container button.pause-button.paused {
+	background: #333;
+	color: white;
 }

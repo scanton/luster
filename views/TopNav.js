@@ -16,19 +16,19 @@
 							<span class="glyphicon glyphicon-floppy-disk"></span>
 						</button>
 					</div>
-					<button class="btn btn-default">
+					<button @click="handleRewind" class="btn btn-default">
 						<span class="glyphicon glyphicon-fast-backward"></span>
 					</button>
-					<button class="btn btn-default">
+					<button :class="{'paused': isPaused}" @click="handlePause" class="btn btn-default pause-button">
 						<span class="glyphicon glyphicon-pause"></span>
 					</button>
-					<button class="btn btn-default">
+					<button :class="{'playing': isPlaying}" @click="handlePlay" class="btn btn-default play-button">
 						<span class="glyphicon glyphicon-play"></span>
 					</button>
-					<button class="btn btn-default">
+					<button @click="handleStop" class="btn btn-default">
 						<span class="glyphicon glyphicon-stop"></span>
 					</button>
-					<button class="btn btn-default">
+					<button @click="handleFastForward" class="btn btn-default">
 						<span class="glyphicon glyphicon-fast-forward"></span>
 					</button>
 				</div>
@@ -41,7 +41,12 @@
 			
 		},
 		computed: {
-			
+			isPaused: function() {
+				return store.state.isPaused;
+			},
+			isPlaying: function() {
+				return store.state.isPlaying;
+			}
 		},
 		props: [],
 		template: s,
@@ -49,13 +54,42 @@
 			return {}
 		},
 		methods: {
+			handleFastForward: function(e) {
+				e.preventDefault();
+				store.commit("setCurrentFrame", store.state.lastFrame);
+			},
 			handleLeftToggle: function(e) {
 				e.preventDefault();
 				store.commit("toggleLeftNav");
 			},
+			handlePause: function(e) {
+				e.preventDefault();
+				store.state.isPaused = !store.state.isPaused;
+			},
+			handlePlay: function(e) {
+				e.preventDefault();
+				if(store.state.isPlaying && store.state.isPaused) {
+					store.state.isPaused = false;
+				} else {
+					store.state.isPlaying = !store.state.isPlaying;
+				}
+			},
+			handleRewind: function(e) {
+				e.preventDefault();
+				store.commit("setCurrentFrame", 0);
+			},
 			handleRightToggle: function(e) {
 				e.preventDefault();
 				store.commit("toggleRightNav");
+			},
+			handleStop: function(e) {
+				e.preventDefault();
+				if(!store.state.isPlaying) {
+					store.commit("setCurrentFrame", 0);
+				} else {
+					store.state.isPlaying = false;
+				}
+				store.state.isPaused = false;
 			}
 		}
 	});

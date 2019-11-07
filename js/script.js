@@ -13,6 +13,14 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
 	state: {
+		currentFrame: 0,
+		selectedLayer: 0,
+		selectedRange: [0, 0],
+		lastFrame: 29,
+
+		isPlaying: false,
+		isPaused: false,
+
 		projectFolder: null,
 		isLeftNavVisible: false,
 		leftNavWidth: 300,
@@ -28,7 +36,6 @@ const store = new Vuex.Store({
 		stageWidth: 600,
 		stageHeight: 400,
 		stageColor: '#FFFFFF',
-		selectedLayer: 0,
 		fillColor: '#0066CC',
 		strokeColor: null,
 		selectedTool: 'select',
@@ -42,6 +49,12 @@ const store = new Vuex.Store({
 	mutations: {
 		selectLayer: function(state, index) {
 			state.selectedLayer = index;
+		},
+		setCurrentFrame: function(state, val) {
+			if(val < 0) {
+				val = 0;
+			}
+			state.currentFrame = val;
 		},
 		setFillColor: function(state, val) {
 			state.fillColor = val;

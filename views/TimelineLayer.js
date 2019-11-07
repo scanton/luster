@@ -11,7 +11,9 @@
 					<span class="layer-color" :style="'background: ' + dataColor"></span>
 					<input class="color-selector" type="color" v-model="layerColor" />
 				</span>
-				<span class="keyframes"></span>
+				<span @mousedown="handleMouseDown" @mousemove="handleMouseDrag" @mouseup="handleMouseUp" class="keyframes">
+					<div :style="frameIndicatorStyle" class="frame-indicator"></div>
+				</span>
 			</nobr>
 		</div>
 	`;
@@ -21,6 +23,9 @@
 			
 		},
 		computed: {
+			frameIndicatorStyle: function() {
+				return 'left: ' + (store.state.currentFrame * 10 + 3.25) + 'px;';
+			},
 			isSelected: function() {
 				return store.state.selectedLayer == this.dataIndex;
 			},
@@ -47,7 +52,8 @@
 		data: function() {
 			return {
 				awaitingDoubleClick: false,
-				isLabelEditEnabled: false
+				isLabelEditEnabled: false,
+				isSelecting: false
 			};
 		},
 		methods: {
@@ -73,6 +79,19 @@
 				setTimeout(function() {
 					$input.select();
 				}, 200);
+			},
+			handleMouseDown: function(e) {
+				store.state.isSelecting = true;
+				console.log(Math.floor(e.layerX / 10), this.dataIndex);
+			},
+			handleMouseDrag: function(e) {
+				if(store.state.isSelecting) {
+					console.log('drag');	
+				}
+			},
+			handleMouseUp: function(e) {
+				console.log(Math.floor(e.layerX / 10), this.dataIndex);
+				store.state.isSelecting = false;
 			}
 		}
 	});

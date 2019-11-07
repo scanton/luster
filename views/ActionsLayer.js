@@ -7,7 +7,9 @@
 					Actions
 					<span class="layer-color" style="'background: black"></span>
 				</span>
-				<span class="keyframes"></span>
+				<span class="keyframes">
+					<div :style="frameIndicatorStyle" class="frame-indicator"></div>
+				</span>
 			</nobr>
 		</div>
 	`;
@@ -17,7 +19,9 @@
 			
 		},
 		computed: {
-		
+			frameIndicatorStyle: function() {
+				return 'left: ' + (store.state.currentFrame * 10 + 3.25) + 'px;';
+			}
 		},
 		props: [],
 		template: s,
