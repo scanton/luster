@@ -1,5 +1,4 @@
 body {
-	
 	color: #999;
 	padding-top: 50px;
 }
@@ -34,6 +33,12 @@ select {
 	left: 0;
 	background: #222;
 }
+.tool-palette .btn, .tool-palette .toolbar-icon, .tool-palette input {
+	cursor: pointer;
+}
+.tool-palette .btn.selected {
+	background: #333;
+}
 .left-nav {
 	position: fixed;
 	top: 40px;
@@ -61,6 +66,7 @@ select {
 	right: 0;
 	height: 40px;
 	background: #111;
+	padding: .5em;
 }
 .context-controls {
 	position: fixed;
@@ -225,6 +231,10 @@ select {
 	background: #444;
 	border-color: #222;
 }
+
+.nav-container .btn:focus {
+	outline: 0;
+}
 .scrubber {
 	position: relative;
 }
@@ -257,4 +267,19 @@ select {
 }
 .toolbar-icon {
 	padding: 8px 0 3px 0;
+}
+.null-color {
+	background: white;
+	width: 20px;
+	height: 20px;
+	margin-left: 5px;
+	margin-bottom: 6px;
+	margin-top: 4px;
+	cursor: pointer;
+}
+.null-color .slash {
+	display: inline-block;
+	border-bottom: 3px solid red;
+	width: 28px;
+	transform: translateX(-4px) translateY(-3.5px) rotate(-45deg);
 }

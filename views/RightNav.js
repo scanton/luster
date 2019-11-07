@@ -3,7 +3,7 @@
 	var s = `
 		<div class="` + componentName + ` nav-container" :style="navStyle">
 			<!--<layers></layers>-->
-			<sprites></sprites>
+			<assets></assets>
 			<fonts></fonts>
 			<alignment></alignment>
 			<properties></properties>

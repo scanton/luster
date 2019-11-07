@@ -1,5 +1,5 @@
 (function() {
-	var componentName = 'sprites';
+	var componentName = 'assets';
 	var s = `
 		<div :class="{'is-open': isOpen}" class="` + componentName + ` container-fluid navbar-panel">
             <div @click="handleToggleOpen" class="row title">
@@ -12,6 +12,9 @@
                 <button class="btn btn-default">
                     <span class="glyphicon glyphicon-plus"></span>
                 </button>
+				<button class="btn btn-default">
+					<span class="glyphicon glyphicon-folder-open"></span>
+				</button>
                 <button class="btn btn-default pull-right">
                     <span class="glyphicon glyphicon-trash"></span>
                 </button>
