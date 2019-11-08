@@ -258,6 +258,10 @@ select {
 	top: 0;
 	cursor: pointer;
 	pointer-events: none;
+
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 20px solid #FF0;
 }
 .glyphicon-rectangle {
 	display: inline-block;
@@ -310,4 +314,12 @@ select {
 .nav-container button.pause-button.paused {
 	background: #333;
 	color: white;
+}
+.asset-item {
+	margin-left: .5em;
+	padding: .25em;
+}
+.item-icon {
+	display: inline;
+	margin-right: .25em;
 }

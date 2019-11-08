@@ -41,7 +41,35 @@ const store = new Vuex.Store({
 		selectedTool: 'select',
 		isObjectSnappingEnabled: false,
 		lastStrokeColor: '#000000',
-		lastFillColor: '#0066CC'
+		lastFillColor: '#0066CC',
+		assetList: [
+			{
+				type: 'folder', 
+				label: 'Test Folder', 
+				path: '', 
+				children: [
+					{
+						type: 'image',
+						label: 'Test Image',
+						path: 'images/test.png',
+						children: []
+					},
+					{
+						type: 'folder', 
+						label: 'Test Folder2', 
+						path: '', 
+						children: [
+							{
+								type: 'image',
+								label: 'Test Image',
+								path: 'images/test.png',
+								children: []
+							}
+						]
+					}
+				]
+			}
+		]
 	},
 	actions: {
 		

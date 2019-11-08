@@ -6,16 +6,16 @@
                 Assets <span class="glyphicon glyphicon-play"></span>
             </div>
             <div v-show="isOpen" class="row controls">
-
+            	<asset-item v-for="(asset, index) in assetList" :data-index="index" :data-label="asset.label" :data-path="asset.path" :data-type="asset.type" :data-children="asset.children"></asset-item>
             </div>
             <div v-show="isOpen" class="row toolbar">
-                <button class="btn btn-default">
+                <button @click="handleAddAsset" class="btn btn-default">
                     <span class="glyphicon glyphicon-plus"></span>
                 </button>
-				<button class="btn btn-default">
+				<button @click="handleAddFolder" class="btn btn-default">
 					<span class="glyphicon glyphicon-folder-open"></span>
 				</button>
-                <button class="btn btn-default pull-right">
+                <button @click="handleDeleteAsset" class="btn btn-default pull-right">
                     <span class="glyphicon glyphicon-trash"></span>
                 </button>
             </div>
@@ -27,7 +27,9 @@
 			
 		},
 		computed: {
-
+			assetList: function() {
+				return store.state.assetList;
+			}
 		},
 		props: [],
 		template: s,
@@ -37,6 +39,15 @@
             }
 		},
 		methods: {
+			handleAddAsset: function(e) {
+
+			},
+			handleAddFolder: function(e) {
+
+			},
+			handleDeleteAsset: function(e) {
+
+			},
 			handleToggleOpen: function(e) {
                 this.isOpen = !this.isOpen;
             }

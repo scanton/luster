@@ -18,8 +18,20 @@
 			
 		},
 		computed: {
+			isPaused: function() {
+				return store.state.isPaused;
+			},
+			isPlaying: function() {
+				return store.state.isPlaying;
+			},
 			handleStyle: function() {
-				return 'left: ' + (store.state.currentFrame * 10) + 'px;';
+				var color = "#FF0";
+				if(this.isPaused) {
+					color = "#F00";
+				} else if(this.isPlaying) {
+					color: "#0F0";
+				}
+				return 'left: ' + (store.state.currentFrame * 10) + 'px; border-color: ' + color + ';';
 			}
 		},
 		props: [],
